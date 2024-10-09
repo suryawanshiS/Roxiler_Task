@@ -99,10 +99,9 @@ const TransactionTable = () => {
     fetchTransactions();
   }, []);
 
-  // Fetch statistics for the default month and year on component mount
   useEffect(() => {
     fetchStatistics(month, year);
-  }, [month, year]); // Refetch when month or year changes
+  }, [month, year]); 
 
   const handleSearch = (e) => {
     const searchValue = e.target.value.toLowerCase();
@@ -196,15 +195,13 @@ const TransactionTable = () => {
       </div>
 
       <Row>
-        {/* BarChart occupies 6 columns */}
+        
         <Col md={6}>
           <BarChartComponent selectedMonth={month} selectedYear={year} />
         </Col>
 
-        {/* Statistics and Pie Chart occupy another 6 columns */}
         <Col>
           <Row>
-            {/* Pie Chart occupies 6 columns */}
             <Col md={6} style={{ marginLeft: "30%" }}>
               <div className="piechart-container">
                 <h1
